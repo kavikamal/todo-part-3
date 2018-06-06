@@ -73,29 +73,29 @@ class TodoApp extends Component {
           />         
 			</header>
       <Switch>
-        <Route exact path="/" render={(props) => <TodoList {...props} todos={this.state.todos} 
+        <Route exact path="/todo-part-3/" render={(props) => <TodoList {...props} todos={this.state.todos} 
                                                      checkboxHandler={this.checkboxHandler} 
                                                      deleteTodo={this.deleteTodo} />} />
-        <Route path="/active" render={(props) => <TodoList {...props} todos={this.state.todos.filter(todo => todo.completed === false)} 
+        <Route path="/todo-part-3/active" render={(props) => <TodoList {...props} todos={this.state.todos.filter(todo => todo.completed === false)} 
                                                                 checkboxHandler={this.checkboxHandler} 
                                                                 deleteTodo={this.deleteTodo} />} />
-        <Route path="/completed" render={(props) => <TodoList {...props} todos={this.state.todos.filter(todo => todo.completed === true)} 
+        <Route path="/todo-part-3/completed" render={(props) => <TodoList {...props} todos={this.state.todos.filter(todo => todo.completed === true)} 
                                                                 checkboxHandler={this.checkboxHandler} 
                                                                 deleteTodo={this.deleteTodo} />} />
-        <Redirect to="/" />                                                        
+        <Redirect to="/todo-part-3/" />                                                        
       </Switch>
       <footer className="footer">
       
       <span className="todo-count"><strong>{this.state.todos.filter(todo => todo.completed === false).length}</strong> item(s) left</span>
       <ul className="filters">
         <li>
-        <Link to="/">All</Link>   
+        <Link to="/todo-part-3/">All</Link>   
         </li>
         <li>
-        <Link to="/active">Active</Link>
+        <Link to="/todo-part-3/active">Active</Link>
         </li>
         <li>
-        <Link to="/completed">Completed</Link>
+        <Link to="/todo-part-3/completed">Completed</Link>
         </li>
       </ul>
       <button className="clear-completed" onClick={this.deleteAllCompleted}>Clear completed</button>
