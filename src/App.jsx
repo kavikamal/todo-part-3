@@ -73,13 +73,13 @@ class TodoApp extends Component {
           />         
 			</header>
       <Switch>
-        <Route exact path="/" render={(props) => <TodoList todos={this.state.todos} 
+        <Route exact path="/" render={(props) => <TodoList {...props} todos={this.state.todos} 
                                                      checkboxHandler={this.checkboxHandler} 
                                                      deleteTodo={this.deleteTodo} />} />
-        <Route path="/active" render={(props) => <TodoList todos={this.state.todos.filter(todo => todo.completed === false)} 
+        <Route path="/active" render={(props) => <TodoList {...props} todos={this.state.todos.filter(todo => todo.completed === false)} 
                                                                 checkboxHandler={this.checkboxHandler} 
                                                                 deleteTodo={this.deleteTodo} />} />
-        <Route path="/completed" render={(props) => <TodoList todos={this.state.todos.filter(todo => todo.completed === true)} 
+        <Route path="/completed" render={(props) => <TodoList {...props} todos={this.state.todos.filter(todo => todo.completed === true)} 
                                                                 checkboxHandler={this.checkboxHandler} 
                                                                 deleteTodo={this.deleteTodo} />} />
         <Redirect to="/" />                                                        
